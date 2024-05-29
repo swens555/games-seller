@@ -8,7 +8,8 @@ export const auth = (req, res,next) => {
   }
   // decryptiname duomenis
   jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
-    if (err) {
+    if (err) { 
+      console.log("help!!!")
       return res.status(401).json({ message: "user is not authenticated" });
     }
 

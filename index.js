@@ -6,6 +6,8 @@ import express from "express";
 import cors from "cors";
 import gameRouter from "./src/routes/game.js";
 import userRouter from "./src/routes/user.js";
+import questionRouter from "./src/routes/question.js";
+//import replyRouter from "./src/routes/reply.js"
 
 
 const app = express();
@@ -24,7 +26,9 @@ mongoose
 
 
 app.use(gameRouter);
-app.use(userRouter)
+app.use(userRouter);
+app.use(questionRouter);
+//app.use(replyRouter)
 
 
 app.use((req, res) => {

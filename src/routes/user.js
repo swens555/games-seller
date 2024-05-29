@@ -1,6 +1,7 @@
 import express from "express";
 import { SIGN_UP,LOG_IN } from "../controllers/user.js";
 const router = express.Router();
+import {auth}   from "../middlewares/auth.js";
 
 // i koki endpointa kreipiesi / kokia funkcija bus aktyvuota
 

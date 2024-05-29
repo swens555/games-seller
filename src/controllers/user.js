@@ -21,10 +21,11 @@ const SIGN_UP = async (req, res) => {
     const newUser = new UserModel(userData);
     const response = await newUser.save();
 
-    return res.status(200).json({ user: response });
+    return res.status(200).json({message: "Account created successfully!", user: response });
+
   } catch (err) {
     console.log("HANDLED ERROR: ", err);
-    return res.status(400).json({ message: "bad data", err : err });
+    return res.status(400).json({ message:  "User already exists", err : err });
   }
 };
 const LOG_IN = async (req, res) => {
